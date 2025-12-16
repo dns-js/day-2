@@ -1,1 +1,1 @@
-const motor = ["honda", "yamaha", "kawasaki"];
+const motor = ["honda", "yamaha", "kawasaki", "ducati"];
