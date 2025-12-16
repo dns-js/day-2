@@ -71,7 +71,7 @@ export class TaskManager {
         }
 
         const newTaskList = tasks.filter((t) => t.id !== id)
-        await this.store.saveTasks(newTasksList)
+        await this.store.saveTasks(newTaskList)
         this.metrics.inc("removeTask")
     }
 

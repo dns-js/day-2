@@ -1,95 +1,102 @@
-// src/demo.js
 
-// import { createTaskApp } from './index.js'; // Import factory function
-// import { formatTask } from './utils/format.js'; // Import formatter untuk tampilan
 
-// // --- Fungsi Utama Demo ---
-// async function runDemo() {
-//     console.log("--- START TASK MANAGER DEMO ---");
+// import { formatTask } from './utils/format.js'; 
 
-//     // 1. Inisialisasi Aplikasi
-//     const { taskManager } = createTaskApp();
-//     console.log("\n✅ Aplikasi berhasil diinisialisasi.");
+// // async function runDemo() {
 
-//     // --- 1. Adds 3 tasks ---
-//     const newTasksData = [
-//         {
-//             title: "Setup Task Manager Demo",
-//             dueDate: "2025-12-17",
-//             priority: "High"
-//         },
-//         {
-//             title: "Review Coding Interview Questions",
-//             dueDate: "2025-12-18",
-//             priority: "Medium"
-//         },
-//         {
-//             title: "Buy coffee beans",
-//             dueDate: "2025-12-16",
-//             priority: "Low"
-//         }
-//     ];
-//     console.log(`Ditambahkan: ${task1.title}, ${task2.title}, ${task3.title}`);
+// //     console.log("--- START TASK MANAGER DEMO ---");
 
-//     // --- 2. Lists tasks ---
-//     const allTasks = await taskManager.getTasks(); 
+// //     // 1. Inisialisasi Aplikasi
+// //     const { taskManager } = createTaskApp();
+// //     console.log("\n✅ Aplikasi berhasil diinisialisasi.");
+
+// //     // --- Persiapan Data (Array of Objects) ---
+// //     const dataPercobaan = [
+// //         {
+// //             title: "Setup Task Manager Demo",
+// //             dueDate: "2025-12-17",
+// //             priority: "High"
+// //         },
+// //         {
+// //             title: "Review Coding Interview Questions",
+// //             dueDate: "2025-12-18",
+// //             priority: "Medium"
+// //         },
+// //         {
+// //             title: "Buy coffee beans",
+// //             dueDate: "2025-12-16",
+// //             priority: "Low"
+// //         }
+// //     ];
+
+// //     // --- 1. Menambah 3 Task Baru (Looping) ---
+// //     console.log("\n--- 1. MENAMBAH 3 TASK BARU ---");
     
-//     allTasks.forEach(task => { // Sekarang ini akan berjalan karena allTasks berisi data
-//         console.log(`- ${formatTask(task)}`);
-//     });
+// //     // Kita simpan task yang sudah jadi agar bisa dipakai untuk tes update/delete nanti
+// //     const createdTasks = [];
 
-//     // --- 3. Marks one task done (Selesai) ---
-//     console.log(`\n--- 3. MENYELESAIKAN TASK (ID: ${task3.id}) ---`);
-//     const doneTask = taskManager.updateTask(task3.id, {
-//         status: "DONE"
-//     });
-//     console.log(`Task Selesai: ${formatTask(doneTask)}`);
+// //     // Loop dataPercobaan dan panggil addTask untuk setiap item
+// //     dataPercobaan.forEach(data => {
+// //         // PERBAIKAN: Menggunakan method .addTask()
+// //         const newTask = taskManager.addTask(data);
+// //         createdTasks.push(newTask);
+// //         console.log(`Berhasil tambah: ${newTask.title}`);
+// //     });
 
-//     // --- 4. Updates one task (PATCH Logic) ---
-//     // Mengubah due date & priority task 1, status/title tidak diubah
-//     console.log(`\n--- 4. MENGUPDATE TASK (ID: ${task1.id}) ---`);
-//     const updatedTask = taskManager.updateTask(task1.id, {
-//         dueDate: "2025-12-20",
-//         priority: "Urgent" 
-//     });
-//     console.log(`Task Diupdate: ${formatTask(updatedTask)}`);
+// //     // Ambil referensi task untuk tes selanjutnya
+// //     const [task1, task2, task3] = createdTasks;
 
-//     // --- 5. Removes one task ---
-//     console.log(`\n--- 5. MENGHAPUS TASK (ID: ${task2.id}) ---`);
-//     taskManager.deleteTask(task2.id);
-//     console.log(`Task dihapus.`);
+// //     // --- 2. List Tasks ---
+// //     console.log("\n--- 2. DAFTAR TASK SAAT INI ---");
+// //     // Gunakan await karena load dari file bersifat async
+// //     const allTasks = await taskManager.listTasks(); 
+// //     allTasks.forEach(task => {
+// //         console.log(`- ${formatTask(task)}`);
+// //     });
 
-//     // Verifikasi setelah penghapusan
-//     console.log("\n--- DAFTAR TASK SETELAH HAPUS ---");
-//     taskManager.getTasks().forEach(task => {
-//         console.log(`- ${formatTask(task)}`);
-//     });
+// //     // --- 3. Update Status (Selesai) ---
+// //     // Pastikan task3 ada sebelum update
+// //     if (task3) {
+// //         console.log(`\n--- 3. MENYELESAIKAN TASK (ID: ${task3.id}) ---`);
+// //         const doneTask = taskManager.updateTask(task3.id, {
+// //             status: "DONE"
+// //         });
+// //         console.log(`Task Selesai: ${formatTask(doneTask)}`);
+// //     }
 
-//     // --- 6. Prints stats ---
-//     console.log("\n--- 6. STATISTIK APLIKASI ---");
-//     const stats = taskManager.getStats();
-//     console.log(`Total Tasks: ${stats.totalTasks}`);
-//     console.log(`Open vs Done: ${stats.openTasks} Open / ${stats.doneTasks} Done`);
-//     console.log(`Counts by Priority:`, stats.priorityCounts);
-//     console.log(`Action Usage Snapshot:`, stats.actionUsage);
+// //     // --- 4. Update Data Lain (PATCH) ---
+// //     if (task1) {
+// //         console.log(`\n--- 4. MENGUPDATE TASK (ID: ${task1.id}) ---`);
+// //         const updatedTask = taskManager.updateTask(task1.id, {
+// //             dueDate: "2025-12-20",
+// //             priority: "Urgent" 
+// //         });
+// //         console.log(`Task Diupdate: ${formatTask(updatedTask)}`);
+// //     }
 
-//     // --- Testing Error Handling (Optional, tapi disarankan) ---
-//     console.log("\n--- ERROR HANDLING TEST ---");
-//     try {
-//         // Mencoba menghapus task yang tidak ada (harus memunculkan error yang readable)
-//         taskManager.deleteTask("non-existent-id-999");
-//     } catch (error) {
-//         // Output: Errors are readable
-//         console.error(`ERROR CATCHED (Expected): ${error.message}`);
-//     }
+// //     // --- 5. Hapus Task ---
+// //     if (task2) {
+// //         console.log(`\n--- 5. MENGHAPUS TASK (ID: ${task2.id}) ---`);
+// //         taskManager.removeTask(task2.id);
+// //         console.log(`Task dihapus.`);
+// //     }
 
-//     console.log("\n--- END TASK MANAGER DEMO ---");
-// }
+// //     // --- 6. Print Stats ---
+// //     console.log("\n--- 6. STATISTIK APLIKASI ---");
+// //     const stats = taskManager.stats();
+// //     console.log(`Total Tasks: ${stats.totalTasks}`);
+// //     console.log(`Open vs Done: ${stats.openTasks} Open / ${stats.doneTasks} Done`);
 
-// runDemo();
+// //     console.log("\n--- END TASK MANAGER DEMO ---");
+// // }
 
+// // // Jalankan Demo
+// // runDemo().catch(error => {
+// //     console.error("❌ ERROR GLOBAL:", error);
+// // });
+
+// import { createTaskApp } from './index.js';
 // src/demo.js
-
 import { createTaskApp } from './index.js';
 import { formatTask } from './utils/format.js'; 
 
@@ -98,10 +105,10 @@ async function runDemo() {
 
     // 1. Inisialisasi Aplikasi
     const { taskManager } = createTaskApp();
-    console.log("\n✅ Aplikasi berhasil diinisialisasi.");
+    console.log("✅ Aplikasi berhasil diinisialisasi.\n");
 
-    // --- Persiapan Data (Array of Objects) ---
-    const dataPercobaan = [
+    // Data yang akan dimasukkan
+    const newTasksData = [
         {
             title: "Setup Task Manager Demo",
             dueDate: "2025-12-17",
@@ -119,68 +126,110 @@ async function runDemo() {
         }
     ];
 
-    // --- 1. Menambah 3 Task Baru (Looping) ---
-    console.log("\n--- 1. MENAMBAH 3 TASK BARU ---");
-    
-    // Kita simpan task yang sudah jadi agar bisa dipakai untuk tes update/delete nanti
+    // --- STEP 1: Adds 3 tasks ---
+    console.log("--- 1. MENAMBAH 3 TASK BARU ---");
     const createdTasks = [];
 
-    // Loop dataPercobaan dan panggil addTask untuk setiap item
-    dataPercobaan.forEach(data => {
-        // PERBAIKAN: Menggunakan method .addTask()
-        const newTask = taskManager.addTask(data);
-        createdTasks.push(newTask);
-        console.log(`Berhasil tambah: ${newTask.title}`);
-    });
+    for (const data of newTasksData) {
+        // Kita gunakan await agar urutannya rapi
+        const task = await taskManager.addTask(data);
+        createdTasks.push(task);
+        console.log(`Berhasil tambah: "${task.title}"`);
+    }
 
-    // Ambil referensi task untuk tes selanjutnya
-    const [task1, task2, task3] = createdTasks;
+    // Ambil referensi task untuk tes update/delete nanti
+    // (Task 1, Task 2, Task 3 sesuai urutan array)
+    const [task1, task2, task3] = createdTasks; 
 
-    // --- 2. List Tasks ---
+    // --- STEP 2: Lists tasks ---
     console.log("\n--- 2. DAFTAR TASK SAAT INI ---");
-    // Gunakan await karena load dari file bersifat async
-    const allTasks = await taskManager.listTasks(); 
-    allTasks.forEach(task => {
-        console.log(`- ${formatTask(task)}`);
-    });
+    const allTasks = await taskManager.listTasks();
+    
+    if (allTasks.length === 0) {
+        console.log("Belum ada task.");
+    } else {
+        allTasks.forEach(task => {
+            // Pastikan formatTask menerima object task
+            console.log(`- ${formatTask(task)}`);
+        });
+    }
 
-    // --- 3. Update Status (Selesai) ---
-    // Pastikan task3 ada sebelum update
+    // --- STEP 3: Marks one task done ---
+    // Kita coba selesaikan task ke-3 ("Buy coffee beans")
     if (task3) {
         console.log(`\n--- 3. MENYELESAIKAN TASK (ID: ${task3.id}) ---`);
         const doneTask = taskManager.updateTask(task3.id, {
             status: "DONE"
         });
-        console.log(`Task Selesai: ${formatTask(doneTask)}`);
+        
+        if (doneTask) {
+            console.log(`Status Task '${doneTask.title}' sekarang: ${doneTask.status}`);
+        }
     }
 
-    // --- 4. Update Data Lain (PATCH) ---
+    // --- STEP 4: Updates one task ---
+    // Update task ke-1: Ganti due date & priority
     if (task1) {
         console.log(`\n--- 4. MENGUPDATE TASK (ID: ${task1.id}) ---`);
+        console.log(`Sebelum: Priority ${task1.priority}, Due ${task1.dueDate}`);
+        
         const updatedTask = taskManager.updateTask(task1.id, {
-            dueDate: "2025-12-20",
+            dueDate: "2025-12-30",
             priority: "Urgent" 
         });
-        console.log(`Task Diupdate: ${formatTask(updatedTask)}`);
+
+        if (updatedTask) {
+            console.log(`Sesudah: Priority ${updatedTask.priority}, Due ${updatedTask.dueDate}`);
+        }
     }
 
-    // --- 5. Hapus Task ---
-    if (task2) {
-        console.log(`\n--- 5. MENGHAPUS TASK (ID: ${task2.id}) ---`);
-        taskManager.removeTask(task2.id);
-        console.log(`Task dihapus.`);
-    }
+    // --- STEP 5: Removes one task ---
+    // Hapus task ke-2
+    // if (task2) {
+    //     console.log(`\n--- 5. MENGHAPUS TASK (ID: ${task2.id}) ---`);
+    //     taskManager.removeTask(task2.id);
+    //     console.log(`Task '${task2.title}' telah dihapus.`);
+    // }
 
-    // --- 6. Print Stats ---
+    // Verifikasi: Tampilkan daftar lagi untuk memastikan task2 hilang
+    console.log("\n(Verifikasi Daftar Setelah Hapus):");
+    const remainingTasks = await taskManager.listTasks();
+    remainingTasks.forEach(task => console.log(`- ${task.title} [${task.status}]`));
+
+
+    // --- STEP 6: Prints stats ---
     console.log("\n--- 6. STATISTIK APLIKASI ---");
     const stats = taskManager.stats();
-    console.log(`Total Tasks: ${stats.totalTasks}`);
-    console.log(`Open vs Done: ${stats.openTasks} Open / ${stats.doneTasks} Done`);
+    
+    console.log(`Total Tasks : ${stats.totalTasks}`);
+    console.log(`Status      : ${stats.openTasks} Open / ${stats.doneTasks} Done`);
+    // Jika Anda sudah implementasi countsByPriority, bisa ditampilkan juga:
+    // console.log(`Priority    :`, stats.countsByPriority);
 
     console.log("\n--- END TASK MANAGER DEMO ---");
 }
 
-// Jalankan Demo
-runDemo().catch(error => {
-    console.error("❌ ERROR GLOBAL:", error);
-});
+// Jalankan dan tangkap error jika ada
+runDemo().catch(err => console.error("❌ ERROR CRITICAL:", err));
+// async function runSimpleTest() {
+//     console.log("--- TEST 1: ADD SINGLE TASK ---");
+
+//     const { taskManager } = createTaskApp();
+//     console.log("Mencoba menambah task...");
+    
+//     try {
+//         const newTask = await taskManager.addTask({
+//             title: "Test Task 1",
+//             priority: "High",
+//             dueDate: "2025-01-01"
+//         });
+
+//         console.log("✅ Berhasil memanggil fungsi addTask.");
+//         console.log("Output Task:", newTask);
+
+//     } catch (error) {
+//         console.error(" Gagal saat addTask:", error);
+//     }
+// }
+
+// runSimpleTest();

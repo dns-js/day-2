@@ -1,47 +1,198 @@
 [
   {
-    "id": "t_1001",
-    "title": "Menyelesaikan laporan akhir tahun",
+    "id": "t_1765902909730",
+    "title": "Setup Task Manager Demo",
+    "dueDate": "2025-12-30",
+    "priority": "Urgent",
     "status": "open",
-    "priority": "high",
-    "due": "2024-12-31",
-    "createdAt": "2024-10-01T09:00:00.000Z",
-    "updatedAt": "2024-10-05T14:30:00.000Z"
+    "createdAt": "2025-12-16T16:35:09.730Z",
+    "updatedAt": "2025-12-16T16:35:09.730Z",
+    "updateAt": "2025-12-16T16:35:09.735Z"
   },
   {
-    "id": "t_1002",
-    "title": "Meeting dengan tim desain",
-    "status": "done",
-    "priority": "medium",
-    "due": "2024-10-20",
-    "createdAt": "2024-10-15T08:00:00.000Z",
-    "updatedAt": "2024-10-20T16:00:00.000Z"
-  },
-  {
-    "id": "t_1003",
-    "title": "Perbaiki bug pada halaman login",
+    "id": "t_1765902909732",
+    "title": "Review Coding Interview Questions",
+    "dueDate": "2025-12-18",
+    "priority": "Medium",
     "status": "open",
-    "priority": "high",
-    "due": null,
-    "createdAt": "2024-10-25T10:15:00.000Z",
-    "updatedAt": "2024-10-25T10:15:00.000Z"
+    "createdAt": "2025-12-16T16:35:09.732Z",
+    "updatedAt": "2025-12-16T16:35:09.732Z"
   },
   {
-    "id": "t_1004",
-    "title": "Beli kopi dan camilan kantor",
+    "id": "t_1765902909733",
+    "title": "Buy coffee beans",
+    "dueDate": "2025-12-16",
+    "priority": "Low",
     "status": "open",
-    "priority": "low",
-    "due": "2024-11-01",
-    "createdAt": "2024-10-26T11:00:00.000Z",
-    "updatedAt": "2024-10-26T11:00:00.000Z"
+    "createdAt": "2025-12-16T16:35:09.733Z",
+    "updatedAt": "2025-12-16T16:35:09.733Z"
   },
   {
-    "id": "t_1005",
-    "title": "Review dokumentasi API",
-    "status": "done",
-    "priority": "medium",
-    "due": "2024-10-10",
-    "createdAt": "2024-10-01T09:30:00.000Z",
-    "updatedAt": "2024-10-11T13:45:00.000Z"
+    "id": "t_1765902919974",
+    "title": "Setup Task Manager Demo",
+    "dueDate": "2025-12-30",
+    "priority": "Urgent",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:19.974Z",
+    "updatedAt": "2025-12-16T16:35:19.975Z",
+    "updateAt": "2025-12-16T16:35:19.980Z"
+  },
+  {
+    "id": "t_1765902919976",
+    "title": "Review Coding Interview Questions",
+    "dueDate": "2025-12-18",
+    "priority": "Medium",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:19.976Z",
+    "updatedAt": "2025-12-16T16:35:19.976Z"
+  },
+  {
+    "id": "t_1765902919977",
+    "title": "Buy coffee beans",
+    "dueDate": "2025-12-16",
+    "priority": "Low",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:19.977Z",
+    "updatedAt": "2025-12-16T16:35:19.977Z"
+  },
+  {
+    "id": "t_1765902929809",
+    "title": "Setup Task Manager Demo",
+    "dueDate": "2025-12-30",
+    "priority": "Urgent",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:29.809Z",
+    "updatedAt": "2025-12-16T16:35:29.810Z",
+    "updateAt": "2025-12-16T16:35:29.816Z"
+  },
+  {
+    "id": "t_1765902929811",
+    "title": "Review Coding Interview Questions",
+    "dueDate": "2025-12-18",
+    "priority": "Medium",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:29.811Z",
+    "updatedAt": "2025-12-16T16:35:29.811Z"
+  },
+  {
+    "id": "t_1765902929812",
+    "title": "Buy coffee beans",
+    "dueDate": "2025-12-16",
+    "priority": "Low",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:29.812Z",
+    "updatedAt": "2025-12-16T16:35:29.812Z"
+  },
+  {
+    "id": "t_1765902932104",
+    "title": "Setup Task Manager Demo",
+    "dueDate": "2025-12-30",
+    "priority": "Urgent",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:32.104Z",
+    "updatedAt": "2025-12-16T16:35:32.105Z",
+    "updateAt": "2025-12-16T16:35:32.111Z"
+  },
+  {
+    "id": "t_1765902932106",
+    "title": "Review Coding Interview Questions",
+    "dueDate": "2025-12-18",
+    "priority": "Medium",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:32.106Z",
+    "updatedAt": "2025-12-16T16:35:32.106Z"
+  },
+  {
+    "id": "t_1765902932107",
+    "title": "Buy coffee beans",
+    "dueDate": "2025-12-16",
+    "priority": "Low",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:32.107Z",
+    "updatedAt": "2025-12-16T16:35:32.107Z"
+  },
+  {
+    "id": "t_1765902935349",
+    "title": "Setup Task Manager Demo",
+    "dueDate": "2025-12-30",
+    "priority": "Urgent",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:35.349Z",
+    "updatedAt": "2025-12-16T16:35:35.350Z",
+    "updateAt": "2025-12-16T16:35:35.355Z"
+  },
+  {
+    "id": "t_1765902935351",
+    "title": "Review Coding Interview Questions",
+    "dueDate": "2025-12-18",
+    "priority": "Medium",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:35.351Z",
+    "updatedAt": "2025-12-16T16:35:35.351Z"
+  },
+  {
+    "id": "t_1765902935352",
+    "title": "Buy coffee beans",
+    "dueDate": "2025-12-16",
+    "priority": "Low",
+    "status": "open",
+    "createdAt": "2025-12-16T16:35:35.352Z",
+    "updatedAt": "2025-12-16T16:35:35.352Z"
+  },
+  {
+    "id": "t_1765903112799",
+    "title": "Setup Task Manager Demo",
+    "dueDate": "2025-12-30",
+    "priority": "Urgent",
+    "status": "open",
+    "createdAt": "2025-12-16T16:38:32.799Z",
+    "updatedAt": "2025-12-16T16:38:32.800Z",
+    "updateAt": "2025-12-16T16:38:32.806Z"
+  },
+  {
+    "id": "t_1765903112801",
+    "title": "Review Coding Interview Questions",
+    "dueDate": "2025-12-18",
+    "priority": "Medium",
+    "status": "open",
+    "createdAt": "2025-12-16T16:38:32.801Z",
+    "updatedAt": "2025-12-16T16:38:32.801Z"
+  },
+  {
+    "id": "t_1765903112802",
+    "title": "Buy coffee beans",
+    "dueDate": "2025-12-16",
+    "priority": "Low",
+    "status": "open",
+    "createdAt": "2025-12-16T16:38:32.802Z",
+    "updatedAt": "2025-12-16T16:38:32.802Z"
+  },
+  {
+    "id": "t_1765903169019",
+    "title": "Setup Task Manager Demo",
+    "dueDate": "2025-12-30",
+    "priority": "Urgent",
+    "status": "open",
+    "createdAt": "2025-12-16T16:39:29.019Z",
+    "updatedAt": "2025-12-16T16:39:29.020Z",
+    "updateAt": "2025-12-16T16:39:29.035Z"
+  },
+  {
+    "id": "t_1765903169021",
+    "title": "Review Coding Interview Questions",
+    "dueDate": "2025-12-18",
+    "priority": "Medium",
+    "status": "open",
+    "createdAt": "2025-12-16T16:39:29.021Z",
+    "updatedAt": "2025-12-16T16:39:29.021Z"
+  },
+  {
+    "id": "t_1765903169023",
+    "title": "Buy coffee beans",
+    "dueDate": "2025-12-16",
+    "priority": "Low",
+    "status": "open",
+    "createdAt": "2025-12-16T16:39:29.023Z",
+    "updatedAt": "2025-12-16T16:39:29.023Z"
   }
 ]

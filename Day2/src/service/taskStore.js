@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "fs/promises"
 
-const filePath = '../../data/tasks.json'
+const filePath = './data/tasks.json'
 export function taskStore(){
     return {
         async loadTasks() {
