@@ -1,26 +1,27 @@
 
-
-function validateAllTasks(tasksArray) {
+function validateTaskInput(input) {
+    
+    const tasks = Array.isArray(input) ? input : [input];
 
     const validPriorities = ["low", "medium", "high"];
 
-    tasksArray.forEach((task) => {
-        if (!task.title || typeof task.title !== "string" || task.title.trim().length < 3) {
-            throw new Error(`Title diperlukan, harus string, dan minimal 3 karakter.`);
+    tasks.forEach((task) => {
+        if (!task.title || typeof task.title !== "string" || task.title.trim() === "") {
+            throw new Error("Title diperlukan, harus string, dan tidak boleh kosong.");
         }
-        if (task.priority && !validPriorities.includes(task.priority)) {
-            throw new Error(`Priority harus low, medium, atau high.`);
+        if (task.priority && !validPriorities.includes(task.priority.toLowerCase())) {
+            throw new Error("Priority harus low, medium, atau high.");
         }
-        if (task.due !== null) {
-            if (typeof task.due !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(task.due)) {
-                throw new Error(`Due date harus berupa null atau string YYYY-MM-DD.`);
+        if (task.dueDate !== null && task.dueDate !== undefined) { 
+            if (typeof task.dueDate !== "string") {
             }
-            
-            const dateObj = new Date(task.due);
+            const dateObj = new Date(task.dueDate);
             if (isNaN(dateObj.getTime())) {
-                 throw new Error(`Due date telah berlalu.`);
+                throw new Error("Due date tidak valid.");
             }
         }
     });
-    return tasksArray; 
+    return input;
 }
+
+export default validateTaskInput;

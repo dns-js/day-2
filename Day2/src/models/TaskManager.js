@@ -1,4 +1,4 @@
-import { validateTaskInput } from "../utils/validate.js";
+import validateTaskInput  from "../utils/validate.js";
 
 
 export class TaskManager {
@@ -9,7 +9,7 @@ export class TaskManager {
 
     async addTask(input) {
         const validData = validateTaskInput(input)
-        const tasks = await this.store.loadTask()
+        const tasks = await this.store.loadTasks()
 
         const newTask = {
             id: `t_${Date.now()}`,
@@ -63,7 +63,7 @@ export class TaskManager {
     }
 
     async removeTask (id) {
-        const tasks = await this.store.loadTask()
+        const tasks = await this.store.loadTasks()
 
         const exists = tasks.some((t) => t.id === id)
         if (!exists){
