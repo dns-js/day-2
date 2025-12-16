@@ -24,17 +24,3 @@ function validateAllTasks(tasksArray) {
     });
     return tasksArray; 
 }
-
-const inputData = [
-  { id: "t_1001", title: "Laporan Final", priority: "high", due: "2024-12-31" }, 
-  { id: "t_1002", title: "Meeting Cepat", priority: "medium", due: null },      
-  { id: "t_1003", title: "OK", priority: "low", due: "2024-11-20" },             // <-- GAGAL DI SINI (Title < 3)
-];
-
-try {
-    const validatedData = validateAllTasks(inputData);
-    console.log("Semua data valid.");
-    
-} catch (error) {
-    console.error("VALIDASI GAGAL:", error.message);
-}
