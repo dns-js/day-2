@@ -10,9 +10,9 @@ export function validateTaskInput(input) {
     throw new Error("Validation Error: Priority harus low, medium, atau high.");
   }
 
-  const dateRegex = !/^\d{4}-\d{2}-\d{2}$/;
+  const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 
-  if (due && dateRegex.test(due)) {
+  if (due && !dateRegex.test(due)) {
     throw new Error("Validation Error: Format tanggal harus YYYY-MM-DD.");
   }
   console.log(input)

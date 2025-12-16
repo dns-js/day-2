@@ -2,5 +2,23 @@
   {
     "id": "test_1",
     "title": "Testing Store"
+  },
+  {
+    "id": "t_1765924511549_221",
+    "title": "Belajar Arsitektur Node.js",
+    "status": "done",
+    "priority": "low",
+    "due": null,
+    "createdAt": "2025-12-16T22:35:11.549Z",
+    "updatedAt": "2025-12-16T22:35:11.626Z"
+  },
+  {
+    "id": "t_1765924511580_773",
+    "title": "Beli Kopi Arabika",
+    "status": "open",
+    "priority": "medium",
+    "due": null,
+    "createdAt": "2025-12-16T22:35:11.580Z",
+    "updatedAt": "2025-12-16T22:35:11.649Z"
   }
 ]
