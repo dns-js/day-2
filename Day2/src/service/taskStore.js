@@ -13,7 +13,7 @@ export async function loadTask() {
 
 export async function saveTask(tasks) {
     const updatedData = JSON.stringify(tasks, null, 2)
-    await writeFile('../../data/tasks.json', updatedData)
+    await writeFile(filePath, updatedData)
 }
 
 
