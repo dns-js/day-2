@@ -55,6 +55,7 @@ export class TaskManager {
 
         tasks[index] = updatedTask
         await this.store.saveTasks(tasks);
+        return updatedTask
     }
 
     async markDone (id) {
@@ -80,7 +81,7 @@ export class TaskManager {
 
         const total = tasks.length
         const done = tasks.filter(t => t.status === 'done').length
-        const open = tasks.filter(t => t.status === "open").length
+        const open = tasks.filter(t => t.status === 'open').length
 
         this.metrics.inc("viewStats")
         return {

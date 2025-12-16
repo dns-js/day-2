@@ -158,8 +158,8 @@ async function runDemo() {
     // Kita coba selesaikan task ke-3 ("Buy coffee beans")
     if (task3) {
         console.log(`\n--- 3. MENYELESAIKAN TASK (ID: ${task3.id}) ---`);
-        const doneTask = taskManager.updateTask(task3.id, {
-            status: "DONE"
+        const doneTask = await taskManager.updateTask(task3.id, {
+            status: "done"
         });
         
         if (doneTask) {
@@ -173,7 +173,7 @@ async function runDemo() {
         console.log(`\n--- 4. MENGUPDATE TASK (ID: ${task1.id}) ---`);
         console.log(`Sebelum: Priority ${task1.priority}, Due ${task1.dueDate}`);
         
-        const updatedTask = taskManager.updateTask(task1.id, {
+        const updatedTask = await taskManager.updateTask(task1.id, {
             dueDate: "2025-12-30",
             priority: "Urgent" 
         });
@@ -192,19 +192,17 @@ async function runDemo() {
     // }
 
     // Verifikasi: Tampilkan daftar lagi untuk memastikan task2 hilang
-    console.log("\n(Verifikasi Daftar Setelah Hapus):");
-    const remainingTasks = await taskManager.listTasks();
-    remainingTasks.forEach(task => console.log(`- ${task.title} [${task.status}]`));
+    // console.log("\n(Verifikasi Daftar Setelah Hapus):");
+    // const remainingTasks = await taskManager.listTasks();
+    // remainingTasks.forEach(task => console.log(`- ${task.title} [${task.status}]`));
 
 
     // --- STEP 6: Prints stats ---
     console.log("\n--- 6. STATISTIK APLIKASI ---");
-    const stats = taskManager.stats();
+    const stats = await taskManager.stats();
     
-    console.log(`Total Tasks : ${stats.totalTasks}`);
-    console.log(`Status      : ${stats.openTasks} Open / ${stats.doneTasks} Done`);
-    // Jika Anda sudah implementasi countsByPriority, bisa ditampilkan juga:
-    // console.log(`Priority    :`, stats.countsByPriority);
+    console.log(`Total Tasks : ${stats.total}`);
+    console.log(`Status      : ${stats.progress} Open / ${stats.done} Done`);
 
     console.log("\n--- END TASK MANAGER DEMO ---");
 }
