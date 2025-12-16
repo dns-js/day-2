@@ -7,22 +7,60 @@ export class TaskManager {
         this.metrics = metrics
     }
 
-async addTask(input) {
-    const validData = validateTaskInput(input)
-    const tasks = await this.store.loadTask()
+    async addTask(input) {
+        const validData = validateTaskInput(input)
+        const tasks = await this.store.loadTask()
 
-    const newTask = {
-        id: `t_${Date.now()}`,
-        ...validData,
-        status: "open",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
+        const newTask = {
+            id: `t_${Date.now()}`,
+            ...validData,
+            status: "open",
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
+        }
+
+        tasks.push(newTask)
+        await this.store.saveTasks(tasks)
+
+        this.metrics.inc("addTask")
+        return newTask
+    }    
+
+    async listTasks(filter = {}) {
+        const tasks = await this.store.loadTasks()
+
+        if (filter.status) {
+            const filtered = tasks.filter((t) => t.status === filter.status)
+            this.metrics.inc("listFiltered")
+            return filtered
+        }
+        this.metrics.inc("listAll")
+        return tasks
     }
 
-    tasks.push(newTask)
-    await this.store.saveTasks(tasks)
+    async updateTask (id, patch){
+        const tasks = await this.store.loadTasks()
+        const index = tasks.findIndex((t) => t.id === id)
+        if (index === -1){
+            throw new Error("Task tidak ditemukan");
+        }
 
-    this.metrics.inc("addTask")
-    return newTask
-}    
+        const oldTask = tasks[index];
+
+        const updatedTask = {
+            ...oldTask,
+            ...patch,
+            updateAt: new Date().toISOString()
+        }
+
+        tasks[index] = updatedTask
+        await this.store.saveTasks(tasks);
+    }
+
+    async markDone (id) {
+        this.metrics.inc("taskDone")
+        return await this.updateTask(id, {status: "done"})
+    }
+
+    async
 }
