@@ -62,5 +62,31 @@ export class TaskManager {
         return await this.updateTask(id, {status: "done"})
     }
 
-    async
+    async removeTask (id) {
+        const tasks = await this.store.loadTask()
+
+        const exists = tasks.some((t) => t.id === id)
+        if (!exists){
+            throw new Error(`Data tidak dihapus, data tidak ada`);
+        }
+
+        const newTaskList = tasks.filter((t) => t.id !== id)
+        await this.store.saveTasks(newTasksList)
+        this.metrics.inc("removeTask")
+    }
+
+    async stats (){
+        const tasks = await this.store.loadTasks()
+
+        const total = tasks.length
+        const done = tasks.filter(t => t.status === 'done').length
+        const open = tasks.filter(t => t.status === "open").length
+
+        this.metrics.inc("viewStats")
+        return {
+            total: total,
+            done: done,
+            progress: open
+        }
+    }
 }
