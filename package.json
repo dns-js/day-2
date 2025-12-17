@@ -19,7 +19,7 @@
     "prettier": "^3.7.4"
   },
   "description": "",
-  "main": "class.js",
+  "main": "demo.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dns-js/day-2.git"

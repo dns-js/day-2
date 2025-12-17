@@ -27,14 +27,18 @@ async function runDemo() {
     tasks.forEach((t) => console.log(formatTask(t)));
 
     console.log('\nMarking one task as done');
-    await taskManager.markDone(t2.id);
+    const doneTask = await taskManager.markDone(t2.id);
+    console.log('\nDone task: ' + formatTask(doneTask));
 
-    console.log('\nupdating: task');
-    await taskManager.updateTask(t1.id, {
-      title: 'push 2nd assignment to repo',
+    console.log('\nUpdating task');
+
+    const updatedT1 = await taskManager.updateTask(t1.id, {
+    title: 'push 2nd assignment to repo',
     });
 
-    console.log('\nRemoving one task');
+    console.log('\nUpdated task: ' + formatTask(updatedT1));
+
+    console.log('\nRemoving task: ' + formatTask(t3));
     await taskManager.removeTask(t3.id);
 
     console.log('\nFinal list of tasks:');
