@@ -7,6 +7,6 @@ export function createMetrics() {
     },
     snapshot() {
       return { ...counters };
-    }
+    },
   };
 }

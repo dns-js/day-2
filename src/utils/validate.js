@@ -24,6 +24,6 @@ export function validateTaskInput(input = {}) {
   return {
     title: title.trim(),
     priority,
-    due
+    due,
   };
 }
