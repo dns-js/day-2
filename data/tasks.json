@@ -1,0 +1,38 @@
+[
+  {
+    "id": "t_1765932733833",
+    "title": "Belajar JavaScript",
+    "status": "done",
+    "priority": "high",
+    "due": null,
+    "createdAt": "Wed Dec 17 2025 07:52:13 GMT+0700 (Western Indonesia Time)",
+    "updatedAt": "2025-12-17T00:52:13.845Z"
+  },
+  {
+    "id": "t_1765932733837",
+    "title": "Belajar Node.JS",
+    "status": "open",
+    "priority": "high",
+    "due": null,
+    "createdAt": "Wed Dec 17 2025 07:52:13 GMT+0700 (Western Indonesia Time)",
+    "updatedAt": "2025-12-17T00:52:13.848Z"
+  },
+  {
+    "id": "t_1765933993901",
+    "title": "Belajar JavaScript",
+    "status": "done",
+    "priority": "high",
+    "due": null,
+    "createdAt": "Wed Dec 17 2025 08:13:13 GMT+0700 (Western Indonesia Time)",
+    "updatedAt": "2025-12-17T01:13:13.908Z"
+  },
+  {
+    "id": "t_1765933993903",
+    "title": "Belajar Node.JS",
+    "status": "open",
+    "priority": "high",
+    "due": null,
+    "createdAt": "Wed Dec 17 2025 08:13:13 GMT+0700 (Western Indonesia Time)",
+    "updatedAt": "2025-12-17T01:13:13.909Z"
+  }
+]
