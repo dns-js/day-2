@@ -5,7 +5,7 @@ class User {
   }
 
   greet() {
-    return `Hello my ${name}, my age is ${age}`;
+    return `Hello my ${name}, my age is ${this.age}`;
   }
 }
 

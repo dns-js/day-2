@@ -6,7 +6,7 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs}"],
     plugins: { js },
-    extends: ["js/recommended", "prettier"],
+    extends: ["js/recommended"],
     languageOptions: { globals: globals.browser },
   },
 ]);
