@@ -1,6 +1,6 @@
 export function createMetrics() {
   const counters = {};
-  
+
   return {
     inc(actionName) {
       if (!counters[actionName]) {
@@ -8,9 +8,9 @@ export function createMetrics() {
       }
       counters[actionName]++;
     },
-    
+
     snapshot() {
       return { ...counters };
-    }
+    },
   };
 }
