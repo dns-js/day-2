@@ -1,29 +1,20 @@
 [
   {
-    "id": "task1",
-    "title": "Finish day 1 assignment",
-    "status": "done",
-    "priority": "high",
-    "due": "2025-12-16",
-    "createdAt": "2025-12-15",
-    "updatedAt": "2025-12-15"
-  },
-  {
-    "id": "t_1765945150819",
+    "id": "t_1765951934624",
     "title": "push 2nd assignment to repo",
     "status": "open",
     "priority": "high",
     "due": "2025-12-18",
-    "createdAt": "2025-12-17T04:19:10.818Z",
-    "updatedAt": "2025-12-17T04:19:10.914Z"
+    "createdAt": "2025-12-17T06:12:14.623Z",
+    "updatedAt": "2025-12-17T06:12:14.673Z"
   },
   {
-    "id": "t_1765945150865",
-    "title": "finish weekly ppt",
-    "status": "open",
-    "priority": "low",
-    "due": "2025-12-19",
-    "createdAt": "2025-12-17T04:19:10.865Z",
-    "updatedAt": "2025-12-17T04:19:10.865Z"
+    "id": "t_1765951934638",
+    "title": "learn day 3 materials",
+    "status": "done",
+    "priority": "medium",
+    "due": null,
+    "createdAt": "2025-12-17T06:12:14.638Z",
+    "updatedAt": "2025-12-17T06:12:14.663Z"
   }
 ]

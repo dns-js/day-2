@@ -22,17 +22,17 @@ export async function saveTasks(tasks) {
   await writeFile(DATA_PATH, JSON.stringify(tasks, null, 2));
 }
 
-const testTask = {
-  id: 'task1',
-  title: 'Finish day 1 assignment',
-  status: 'done',
-  priority: 'high',
-  due: '2025-12-16',
-  createdAt: '2025-12-15',
-  updatedAt: '2025-12-15',
-};
+// const testTask = {
+//   id: 'task1',
+//   title: 'Finish day 1 assignment',
+//   status: 'done',
+//   priority: 'high',
+//   due: '2025-12-16',
+//   createdAt: '2025-12-15',
+//   updatedAt: '2025-12-15',
+// };
 
-const testsave = await saveTasks([testTask]);
-const test = await loadTasks();
-console.log(testsave);
-console.log(test);
+// const testsave = await saveTasks([testTask]);
+// const test = await loadTasks();
+// console.log(testsave);
+// console.log(test);
