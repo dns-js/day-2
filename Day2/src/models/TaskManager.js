@@ -82,12 +82,13 @@ export class TaskManager {
         const total = tasks.length
         const done = tasks.filter(t => t.status === 'done').length
         const open = tasks.filter(t => t.status === 'open').length
-
+        const listOfAction = this.metrics.snapshot();
+        
         this.metrics.inc("viewStats")
         return {
             total: total,
             done: done,
-            progress: open
+            progress: open,
         }
     }
 }

@@ -1,6 +1,6 @@
 
 
-export function createMetrics() {
+function createMetrics() {
     const counters = {}
 
     return {
@@ -13,5 +13,8 @@ export function createMetrics() {
         snapshot(){
             return {...counters}
         }
+        
     }
 }
+
+export default  createMetrics 

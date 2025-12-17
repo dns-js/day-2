@@ -7,7 +7,7 @@ async function runDemo() {
 
     // 1. Inisialisasi Aplikasi
     const { taskManager } = createTaskApp();
-    console.log("✅ Aplikasi berhasil diinisialisasi.\n");
+    console.log("Aplikasi berhasil diinisialisasi.\n");
 
     const newTasksData = [
         {
@@ -84,12 +84,6 @@ async function runDemo() {
     //     taskManager.removeTask(task2.id);
     //     console.log(`Task '${task2.title}' telah dihapus.`);
     // }
-
-    // Verifikasi: Tampilkan daftar lagi untuk memastikan task2 hilang
-    // console.log("\n(Verifikasi Daftar Setelah Hapus):");
-    // const remainingTasks = await taskManager.listTasks();
-    // remainingTasks.forEach(task => console.log(`- ${task.title} [${task.status}]`));
-
 
     // --- STEP 6: Prints stats ---
     console.log("\n--- 6. STATISTIK APLIKASI ---");
