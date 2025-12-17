@@ -21,6 +21,7 @@ function validateTaskInput(input) {
     }
     if (task.dueDate !== null && task.dueDate !== undefined) {
       if (typeof task.dueDate !== "string") {
+        throw new Error("Due Date tidak sesuai");
       }
       const dateObj = new Date(task.dueDate);
       if (isNaN(dateObj.getTime())) {
@@ -30,5 +31,4 @@ function validateTaskInput(input) {
   });
   return input;
 }
-    
 export default validateTaskInput;

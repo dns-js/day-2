@@ -8,6 +8,7 @@ export function taskStore() {
         const response = await readFile(filePath);
         return JSON.parse(response);
       } catch (error) {
+        console.log(error);
         return [];
       }
     },
