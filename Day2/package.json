@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "testing-husky": "echo \"Husky is Working\"",
     "prepare": "husky"
   },
   "devDependencies": {
