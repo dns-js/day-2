@@ -1,7 +1,10 @@
 import { createTaskApp } from "./index.js";
 import { formatTask } from "./utils/format.js";
+import 'dotenv/config'
 
 async function runDemo() {
+  console.log("APP---" + process.env.APP_VERSION);
+  
   console.log("--- START TASK MANAGER DEMO ---");
 
   // 1. Inisialisasi Aplikasi

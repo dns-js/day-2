@@ -49,7 +49,7 @@ export class TaskManager {
     const updatedTask = {
       ...oldTask,
       ...patch,
-      updateAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
     };
 
     tasks[index] = updatedTask;
