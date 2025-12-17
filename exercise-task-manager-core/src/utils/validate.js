@@ -9,8 +9,9 @@ export const validateTaskInput = (input) => {
   if (!["low", "medium", "high"].includes(priority.toLowerCase()))
     throw new Error("Invalid priority");
 
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(due) && due !== null)
-    throw new Error("Invalid due date");
+  if (due) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(due)) throw new Error("Invalid due date");
+  }
 
   return {
     title,

@@ -1,29 +1,53 @@
-import { validateTaskInput } from "./utils/validate.js";
-import { loadTasks, saveTasks } from "./services/taskStore.js";
-import { createMetrics } from "./services/metrics.js";
+import { createTaskApp } from "./index.js";
+import { formatTask } from "./utils/format.js";
 
-const metrics = createMetrics();
+async function runDemo() {
+  const { taskManager } = createTaskApp();
 
-const tasks = await loadTasks();
+  try {
+    // Add 3 Task
+    const task1 = await taskManager.addTask({
+      title: "Learn JavaScript",
+      priority: "high",
+      due: "2025-12-20",
+    });
+    const task2 = await taskManager.addTask({
+      title: "Write blog post",
+      priority: "medium",
+    });
+    const task3 = await taskManager.addTask({
+      title: "Do laundry",
+      priority: "low",
+      due: "2025-12-18",
+    });
 
-const input = validateTaskInput({
-  title: "Learn async persistence",
-  priority: "Medium",
-  due: "2025-01-01",
-});
+    // Lists tasks
+    const allTasks = await taskManager.listTasks();
+    allTasks.forEach((task) => console.log(formatTask(task)));
 
-const now = new Date().toISOString();
+    // Marks one task done
+    await taskManager.markDone(task1.id);
+    const afterDone = await taskManager.listTasks();
+    afterDone.forEach((task) => console.log(formatTask(task)));
 
-tasks.push({
-  id: "t_" + Date.now(),
-  status: "open",
-  createdAt: now,
-  updatedAt: now,
-  ...input,
-});
+    // Updates one task
+    await taskManager.updateTask(task2.id, {
+      title: "Write amazing blog post",
+    });
+    const afterUpdate = await taskManager.listTasks();
+    afterUpdate.forEach((task) => console.log(formatTask(task)));
 
-metrics.inc("createTask");
+    // Removes one task
+    await taskManager.removeTask(task3.id);
+    const afterRemove = await taskManager.listTasks();
+    afterRemove.forEach((task) => console.log(formatTask(task)));
 
-await saveTasks(tasks);
+    // Prints stats
+    const stats = await taskManager.stats();
+    console.log(stats);
+  } catch (err) {
+    console.error("Error:", err.message);
+  }
+}
 
-console.log("Metrics:", metrics.snapshot());
+runDemo();
