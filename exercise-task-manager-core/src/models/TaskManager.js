@@ -124,6 +124,11 @@ export class TaskManager {
       total: tasks.length,
       open: tasks.filter((t) => t.status === "open").length,
       done: tasks.filter((t) => t.status === "done").length,
+      priority: {
+        low: tasks.filter((t) => t.priority === "low").length,
+        medium: tasks.filter((t) => t.priority === "medium").length,
+        high: tasks.filter((t) => t.priority === "high").length,
+      },
       actions: this.metrics.snapshot(),
     };
   }
