@@ -26,13 +26,13 @@ export function validateTaskInput(input = {}) {
   };
 }
 
-const testTask = {
-    id: "task1",
-    title: "Finish day 1 assignment",
-    status: "done",
-    priority: "high",
-    due: "2025-12-16",
-    createdAt: "2025-12-15",
-    updatedAt: "2025-12-15"  
-}
-console.log(validateTaskInput(testTask));
+// const testTask = {
+//     id: "task1",
+//     title: "Finish day 1 assignment",
+//     status: "done",
+//     priority: "high",
+//     due: "2025-12-16",
+//     createdAt: "2025-12-15",
+//     updatedAt: "2025-12-15"  
+// }
+// console.log(validateTaskInput(testTask));

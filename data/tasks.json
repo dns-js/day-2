@@ -9,21 +9,21 @@
     "updatedAt": "2025-12-15"
   },
   {
-    "id": "task2",
-    "title": "Finish day 2 assignment",
+    "id": "t_1765937420584",
+    "title": "push 2nd assignment to repo",
     "status": "open",
-    "priority": "medium",
-    "due": "2025-12-17",
-    "createdAt": "2025-12-15",
-    "updatedAt": "2025-12-15"
+    "priority": "high",
+    "due": "2025-12-18",
+    "createdAt": "2025-12-17T02:10:20.583Z",
+    "updatedAt": "2025-12-17T02:10:20.630Z"
   },
   {
-    "id": "task3",
-    "title": "Finish daily report",
+    "id": "t_1765937420606",
+    "title": "finish weekly ppt",
     "status": "open",
     "priority": "low",
-    "due": null,
-    "createdAt": "2025-12-14",
-    "updatedAt": "2025-12-15"
+    "due": "2025-12-19",
+    "createdAt": "2025-12-17T02:10:20.606Z",
+    "updatedAt": "2025-12-17T02:10:20.606Z"
   }
 ]

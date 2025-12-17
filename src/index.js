@@ -1,11 +1,10 @@
-fetch('https://dummyjson.com/products/1')
-    .then((response) => response.json())
-    // .then((result) => console.log(result));
+import * as store from "./services/taskStore.js";
+import { createMetrics } from "./services/metrics.js";
+import { TaskManager } from "./models/TaskManager.js";
 
-const getProduct = async () => {
-    const response = await fetch('https://dummyjson.com/products/1');
-    const result = await response.json();
-    console.log(result);
-};
+export function createTaskApp() {
+  const metrics = createMetrics();
+  const taskManager = new TaskManager(store, metrics);
 
-getProduct();
+  return { taskManager };
+}
