@@ -1,0 +1,26 @@
+{
+  
+  "name": "day-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dns-js/day-2.git"
+  },
+  "scripts": {
+    "testing-husky": "echo \"Husky is working!\"",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dns-js/day-2/issues"
+  },
+  "homepage": "https://github.com/dns-js/day-2#readme",
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}
