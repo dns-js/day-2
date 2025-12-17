@@ -28,7 +28,7 @@ export class TaskManager {
 
     await this.store.saveTasks([...tasks, task]);
     this.metrics.inc("addTask");
-    return task;
+    return task;np
   }
 
   async listTasks(filter = {}) {

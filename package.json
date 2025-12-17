@@ -1,5 +1,11 @@
 {
   "name": "task-manager-core",
   "version": "1.0.0",
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
 }
