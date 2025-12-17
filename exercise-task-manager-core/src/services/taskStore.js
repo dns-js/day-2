@@ -13,7 +13,7 @@ const loadTasks = async () => {
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
   } catch (err) {
-    throw new Error("Failed to load tasks");
+    throw new Error("Failed to load tasks", err);
   }
 };
 
@@ -22,7 +22,7 @@ const saveTasks = async (tasks) => {
     const json = JSON.stringify(tasks, null, 2);
     await writeFile(data_path, json, "utf-8");
   } catch (err) {
-    throw new Error("Failed to save tasks");
+    throw new Error("Failed to save tasks", err);
   }
 };
 

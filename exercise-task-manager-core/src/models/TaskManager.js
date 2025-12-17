@@ -30,7 +30,7 @@ export class TaskManager {
     return newTask;
   }
 
-  async listTasks() {
+  async listTasks(filter = {}) {
     this.metrics.inc("listTasks");
 
     const tasks = await this.store.loadTasks();
