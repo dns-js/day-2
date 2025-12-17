@@ -3,7 +3,7 @@
   "workspaces": {
     "": {
       "name": "day-2",
-      "dependencies": {
+      "devDependencies": {
         "husky": "^9.1.7",
       },
     },
