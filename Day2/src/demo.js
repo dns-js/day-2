@@ -78,12 +78,11 @@ async function runDemo() {
     }
 
     // --- STEP 5: Removes one task ---
-    // Hapus task ke-2
-    // if (task2) {
-    //     console.log(`\n--- 5. MENGHAPUS TASK (ID: ${task2.id}) ---`);
-    //     taskManager.removeTask(task2.id);
-    //     console.log(`Task '${task2.title}' telah dihapus.`);
-    // }
+    if (task2) {
+        console.log(`\n--- 5. MENGHAPUS TASK (ID: ${task2.id}) ---`);
+        taskManager.removeTask(task2.id);
+        console.log(`Task '${task2.title}' telah dihapus.`);
+    }
 
     // --- STEP 6: Prints stats ---
     console.log("\n--- 6. STATISTIK APLIKASI ---");

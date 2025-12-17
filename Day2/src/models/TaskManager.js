@@ -70,7 +70,6 @@ export class TaskManager {
         if (!exists){
             throw new Error(`Data tidak dihapus, data tidak ada`);
         }
-
         const newTaskList = tasks.filter((t) => t.id !== id)
         await this.store.saveTasks(newTaskList)
         this.metrics.inc("removeTask")
