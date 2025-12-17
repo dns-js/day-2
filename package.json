@@ -1,0 +1,24 @@
+{
+  "name": "day-2",
+  "version": "1.0.0",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dns-js/day-2.git"
+  },
+  "main": "motocyle.js",
+  "bugs": {
+    "url": "https://github.com/dns-js/day-2/issues"
+  },
+  "description": "",
+  "homepage": "https://github.com/dns-js/day-2#readme",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "type": "module",
+  "dependencies": {
+    "husky": "^9.1.7"
+  }
+}
