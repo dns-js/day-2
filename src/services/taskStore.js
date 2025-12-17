@@ -7,6 +7,7 @@ export async function loadTasks() {
         const data = await fs.readFile(FILE_PATH);
         return JSON.parse(data);
     } catch (error) {
+        error;
         return []; // Jika file tidak ada, anggap array kosong
     }
 }
