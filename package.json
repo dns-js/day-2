@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "test-husky": "echo \"Husky is working!\"",
     "prepare": "husky"
   },
   "devDependencies": {
