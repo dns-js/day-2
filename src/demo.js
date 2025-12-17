@@ -9,7 +9,7 @@ async function runDemo() {
     const t1 = await taskManager.addTask({ title: "Belajar Arsitektur Node.js", priority: "low" });
     const t2 = await taskManager.addTask({ title: "Beli Kopi", priority: "low" });
     const t3 = await taskManager.addTask({ title: "Meeting Project", priority: "medium", due: "2025-12-30" });
-    console.log("3 Tasks added successfully.\n");
+    console.log("3 Task Berhasil ditambahkan.\n");
 
     console.log("=== STEP 2: LISTING ALL TASKS ===");
     const allTasks = await taskManager.listTasks();

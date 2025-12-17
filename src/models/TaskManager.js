@@ -11,7 +11,7 @@ export class TaskManager {
     const tasks = await this.store.loadTasks();
     
     const newTask = {
-      id: `t_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
+      id: `t_${Date.now()}`,
       title: input.title,
       status: 'open',
       priority: input.priority,

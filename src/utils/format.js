@@ -6,6 +6,6 @@ export function formatTask(task) {
   return `${statusIcon} ${id.slice(0, 5)}... | ${title.padEnd(20)} | ${priority} ${dueInfo}`;
 }
 
-const dummy = { id: "t_12345", title: "Test Task", status: "open", priority: "medium", due: "2025-12-31" };
-console.log("Contoh format output:");
-console.log(formatTask(dummy));
+// const dummy = { id: "t_12345", title: "Test Task", status: "open", priority: "medium", due: "2025-12-31" };
+// console.log("Contoh format output:");
+// console.log(formatTask(dummy));
