@@ -28,7 +28,7 @@ export class TaskManager {
       priority: data.priority,
       due: data.due,
       createdAt: now,
-      updatedAt: now
+      updatedAt: now,
     };
 
     await this.store.saveTasks([...tasks, task]);
@@ -41,7 +41,7 @@ export class TaskManager {
     const tasks = await this.store.loadTasks();
 
     if (filter.status) {
-      return tasks.filter(t => t.status === filter.status);
+      return tasks.filter((t) => t.status === filter.status);
     }
 
     return tasks;
@@ -53,13 +53,13 @@ export class TaskManager {
     const tasks = await this.store.loadTasks();
     let found = false;
 
-    const updated = tasks.map(task => {
+    const updated = tasks.map((task) => {
       if (task.id === id) {
         found = true;
         return {
           ...task,
           status: "done",
-          updatedAt: this._now()
+          updatedAt: this._now(),
         };
       }
       return task;
@@ -78,13 +78,13 @@ export class TaskManager {
     const tasks = await this.store.loadTasks();
     let found = false;
 
-    const updated = tasks.map(task => {
+    const updated = tasks.map((task) => {
       if (task.id === id) {
         found = true;
         return {
           ...task,
           ...patch,
-          updatedAt: this._now()
+          updatedAt: this._now(),
         };
       }
       return task;
@@ -99,7 +99,7 @@ export class TaskManager {
     this.metrics.inc("removeTask");
 
     const tasks = await this.store.loadTasks();
-    const filtered = tasks.filter(t => t.id !== id);
+    const filtered = tasks.filter((t) => t.id !== id);
 
     if (filtered.length === tasks.length) {
       throw new Error(`Task tidak ditemukan: ${id}`);
@@ -114,8 +114,8 @@ export class TaskManager {
     const tasks = await this.store.loadTasks();
 
     const total = tasks.length;
-    const open = tasks.filter(t => t.status === "open").length;
-    const done = tasks.filter(t => t.status === "done").length;
+    const open = tasks.filter((t) => t.status === "open").length;
+    const done = tasks.filter((t) => t.status === "done").length;
 
     const byPriority = tasks.reduce((acc, t) => {
       acc[t.priority] = (acc[t.priority] || 0) + 1;
@@ -127,7 +127,7 @@ export class TaskManager {
       open,
       done,
       byPriority,
-      actions: this.metrics.snapshot()
+      actions: this.metrics.snapshot(),
     };
   }
 }
