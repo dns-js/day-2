@@ -89,6 +89,7 @@ export class TaskManager {
             total: total,
             done: done,
             progress: open,
+            listOfAction: listOfAction
         }
     }
 }

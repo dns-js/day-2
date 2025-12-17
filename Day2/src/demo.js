@@ -89,6 +89,7 @@ async function runDemo() {
     console.log("\n--- 6. STATISTIK APLIKASI ---");
     const stats = await taskManager.stats();
     
+    console.log(`List of Action: ${JSON.stringify(stats.listOfAction, null, 2)}`);
     console.log(`Total Tasks : ${stats.total}`);
     console.log(`Status      : ${stats.progress} Open / ${stats.done} Done`);
 
