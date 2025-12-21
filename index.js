@@ -7,11 +7,11 @@
 sayHello();
 
 function sayHello() {
-  console.log("hello");
+  console.log('hello');
 }
 
-console.log("tes", tes);
-const tes = "aaa";
+console.log('tes', tes);
+const tes = 'aaa';
 
 // async await
 

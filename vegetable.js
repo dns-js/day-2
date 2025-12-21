@@ -1,1 +1,1 @@
-export const vegetables = ["kol", "kangkung", "jengkol"];
+export const vegetables = ['kol', 'kangkung', 'jengkol'];
