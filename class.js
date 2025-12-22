@@ -4,9 +4,9 @@ class User {
     this.age = age;
   }
 
-  greet() {
-    return `Hello my ${name}, my age is ${age}`;
-  }
+  // greet() {
+  //   return `Hello my ${name}, my age is ${age}`;
+  // }
 }
 
 const user1 = new User("hilman", 17);
