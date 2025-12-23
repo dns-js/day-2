@@ -1,0 +1,3 @@
+npm run testing-husky
+npm run lint
+npm run format
