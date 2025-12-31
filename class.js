@@ -5,14 +5,14 @@ class User {
   }
 
   greet() {
-    return `Hello my ${name}, my age is ${age}`;
+    return `Hello my ${this.name}, my age is ${this.age}`;
   }
 }
 
-const user1 = new User("hilman", 17);
-const user2 = new User("theo", 17);
+const user1 = new User('hilman', 17);
+const user2 = new User('theo', 17);
 
-console.log("user", user1, user2);
+console.log('user', user1, user2);
 
 class Student extends User {
   constructor(name, age, graduate) {
@@ -21,5 +21,5 @@ class Student extends User {
   }
 }
 
-const student1 = new Student("hilman", 99, 2199);
-console.log("student1", student1);
+const student1 = new Student('hilman', 99, 2199);
+console.log('student1', student1);
